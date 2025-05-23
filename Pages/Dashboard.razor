@@ -1,4 +1,55 @@
-@page "/"
-
 <h1>Dashboard</h1>
 <p>Welcome to your personal finance dashboard!</p>
+@page "/"
+@inject FinanceDashboard.Services.TransactionStorageService Storage
+@using FinanceDashboard.Services
+
+<h3>Dashboard</h3>
+
+@if (transactions.Count == 0)
+{
+    <p>No transactions yet. Add some to see insights!</p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Total Income</div>
+                <div class="card-body">
+                    <h5 class="card-title">@TotalIncome.ToString("C")</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header">Total Expenses</div>
+                <div class="card-body">
+                    <h5 class="card-title">@TotalExpenses.ToString("C")</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Net Balance</div>
+                <div class="card-body">
+                    <h5 class="card-title">@NetBalance.ToString("C")</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<Transaction> transactions = new();
+    private decimal TotalIncome => transactions.Where(t => t.Type == "Income").Sum(t => t.Amount);
+    private decimal TotalExpenses => transactions.Where(t => t.Type == "Expense").Sum(t => t.Amount);
+    private decimal NetBalance => TotalIncome - TotalExpenses;
+
+    protected override async Task OnInitializedAsync()
+    {
+        transactions = await Storage.LoadAsync();
+    }
+}
