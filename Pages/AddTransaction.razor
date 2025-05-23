@@ -1,4 +1,45 @@
 @page "/add-transaction"
 
-<h1>Add Transaction</h1>
-<p>This is where you’ll enter new income or expenses.</p>
+<h3>Add Transaction</h3>
+
+<EditForm Model="@transaction" OnValidSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Description:</label>
+        <InputText class="form-control" @bind-Value="transaction.Description" />
+    </div>
+
+    <div class="mb-3">
+        <label>Amount:</label>
+        <InputNumber class="form-control" @bind-Value="transaction.Amount" />
+    </div>
+
+    <div class="mb-3">
+        <label>Type:</label>
+        <InputSelect class="form-control" @bind-Value="transaction.Type">
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+        </InputSelect>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Add</button>
+</EditForm>
+
+@code {
+    private Transaction transaction = new();
+
+    private void HandleSubmit()
+    {
+        Console.WriteLine($"✔️ Added: {transaction.Description}, {transaction.Amount}, {transaction.Type}");
+        transaction = new(); // reset form
+    }
+
+    public class Transaction
+    {
+        public string Description { get; set; } = "";
+        public decimal Amount { get; set; }
+        public string Type { get; set; } = "Income";
+    }
+}
