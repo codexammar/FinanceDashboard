@@ -1,4 +1,41 @@
 @page "/history"
+@inject FinanceDashboard.Services.TransactionStorageService Storage
+@using FinanceDashboard.Services
 
-<h1>Transaction History</h1>
-<p>This page will show your saved transaction records.</p>
+<h3>Transaction History</h3>
+
+@if (transactions.Count == 0)
+{
+    <p>No transactions yet.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var t in transactions)
+            {
+                <tr>
+                    <td>@t.Description</td>
+                    <td>@t.Amount.ToString("C")</td>
+                    <td>@t.Type</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Transaction> transactions = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        transactions = await Storage.LoadAsync();
+    }
+}

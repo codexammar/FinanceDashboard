@@ -1,4 +1,6 @@
 @page "/add-transaction"
+@inject FinanceDashboard.Services.TransactionStorageService Storage
+@using FinanceDashboard.Services
 
 <h3>Add Transaction</h3>
 
@@ -29,17 +31,18 @@
 
 @code {
     private Transaction transaction = new();
+    private List<Transaction> allTransactions = new();
 
-    private void HandleSubmit()
+    protected override async Task OnInitializedAsync()
     {
-        Console.WriteLine($"✔️ Added: {transaction.Description}, {transaction.Amount}, {transaction.Type}");
-        transaction = new(); // reset form
+        allTransactions = await Storage.LoadAsync();
     }
 
-    public class Transaction
+    private async Task HandleSubmit()
     {
-        public string Description { get; set; } = "";
-        public decimal Amount { get; set; }
-        public string Type { get; set; } = "Income";
+        allTransactions.Add(transaction);
+        await Storage.SaveAsync(allTransactions);
+        Console.WriteLine($"✅ Saved: {transaction.Description}, {transaction.Amount}, {transaction.Type}");
+        transaction = new(); // Reset
     }
 }
