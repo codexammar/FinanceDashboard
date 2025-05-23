@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MckRCHNj9xM=",
+  "dgSpecHash": "s9ke6r8VCOk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\temp\\temp.csproj",
+  "projectFilePath": "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\FinanceDashboard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\syeda\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.16\\microsoft.aspnetcore.authorization.8.0.16.nupkg.sha512",
     "C:\\Users\\syeda\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.16\\microsoft.aspnetcore.components.8.0.16.nupkg.sha512",

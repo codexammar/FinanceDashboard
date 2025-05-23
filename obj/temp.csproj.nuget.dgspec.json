@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\temp\\temp.csproj": {}
+    "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\FinanceDashboard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\temp\\temp.csproj": {
+    "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\FinanceDashboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\temp\\temp.csproj",
-        "projectName": "temp",
-        "projectPath": "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\temp\\temp.csproj",
+        "projectUniqueName": "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\FinanceDashboard.csproj",
+        "projectName": "FinanceDashboard",
+        "projectPath": "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\FinanceDashboard.csproj",
         "packagesPath": "C:\\Users\\syeda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\temp\\obj\\",
+        "outputPath": "C:\\Users\\syeda\\Documents\\Personal Github Projects\\FinanceDashboard\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\syeda\\AppData\\Roaming\\NuGet\\NuGet.Config"
