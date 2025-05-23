@@ -10,7 +10,7 @@
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/FinanceDashboard/" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="@baseUri" Match="NavLinkMatch.All">
                 <span class="bi bi-speedometer2" aria-hidden="true"></span> Dashboard
             </NavLink>
         </div>
@@ -27,8 +27,11 @@
     </nav>
 </div>
 
+@inject NavigationManager NavManager
+
 @code {
     private bool collapseNavMenu = true;
+    private string baseUri => NavManager.BaseUri;
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
@@ -37,3 +40,4 @@
         collapseNavMenu = !collapseNavMenu;
     }
 }
+
