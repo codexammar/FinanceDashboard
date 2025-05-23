@@ -1,6 +1,7 @@
 # Build and VS artifacts
 bin/
 obj/
+dist/
 
 # Published static output (used only during deployment)
 wwwroot/_framework/
