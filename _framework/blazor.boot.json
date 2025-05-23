@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "FinanceDashboard",
   "resources": {
-    "hash": "sha256-FH0tnMrRxwJiMRUXdkiZlbaHgXT/BG7AUB0dCLXjo1o=",
+    "hash": "sha256-HPUDKdov5vMwUGmyn05dnE2uIMMO23jFE62c3NSAV8U=",
     "jsModuleNative": {
       "dotnet.native.8.0.16.9owwdc079s.js": "sha256-RiGT44TFZmHOY+Oqvb8o8r+BJVWex6+dPxFxrOiWvFY="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "FinanceDashboard.wasm": "sha256-kr+nyDldve4UHyTu2lKt5NJBymm4XLgom99Wl4x3Lnw=",
+      "FinanceDashboard.wasm": "sha256-Pxq79VNsA4VYcOXR4xZV0AaxTixA3MrdQdDlnmrpjjo=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-y9TLO2S8vNWFglJ1w4twjzChUMWC9c+e8wwytJzRTqM=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-GVCddj5GU1H/cXYd6CGf/OcCWQ5e2n2UxMR9UVc/0bI=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-NItyC9Kl7OWhqvFlmtxQln1p8A3yuyPtCbt60tEvEio=",
